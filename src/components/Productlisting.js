@@ -14,9 +14,10 @@ const ProductList = () => {
   const addToCart = (product) => {
     dispatch(addItem(product));
     setAddedProducts(prev => ({ ...prev, [product.id]: true }));
-    setTimeout(() => {
+     const timeout=setTimeout(() => {
       setAddedProducts(prev => ({ ...prev, [product.id]: false }));
     }, 1500); 
+    clearTimeout(timeout);
   }
 
   useEffect(() => {
